@@ -1,0 +1,11 @@
+Starting project with the entities' layer finished and starting use cases layer.
+
+Warning:
+    - domain/use_cases/stabilityploter.py: it's incomplete, can't be used right now.
+
+Additioned:
+    - domain/entities/currencieschecker.py: check if all the business rules aply for the dataset, it's completed.
+    - domain/use_cases/stabilityploter.py: started the class construction.
+
+Revised:
+    - tests/test_mainapi.py: revised and refactored for properly test the mainapi.py.
