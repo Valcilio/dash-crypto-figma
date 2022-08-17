@@ -1,0 +1,9 @@
+gráfico de linhas (estabilidade temporal)
+    - Daily
+    - Monthly
+    - Weekly
+
+boxplot (detector de outliers)
+    - Month
+
+distribution (Histogram)
