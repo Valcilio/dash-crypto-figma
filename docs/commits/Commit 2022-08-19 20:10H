@@ -1,0 +1,10 @@
+Advancing in use_cases structure and created main.py.
+
+Warning:
+    - main.py: created for testing the application but can't be used right now.
+
+Additioned:
+    - New files at "domain/use_cases".
+
+Revised:
+    - The architecture of this project was revised.
