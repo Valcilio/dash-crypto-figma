@@ -1,5 +1,6 @@
 from datetime import datetime
 import pandas as pd
+import streamlit as st
 
 from domain.use_cases.filter import Filter
 from domain.use_cases.ploter import Ploter
@@ -31,7 +32,6 @@ class Apresentator():
 
         slider_value_datetime = self.filter.filter_slider_datetime(name='Filtering By Day', default_value=slider_default_datetime)
         df_plot = self.filter.filter_df_datetime(slider_value_datetime)
-
         self.ploter.daily_stability(df=df_plot)
 
     def monthly_lineplot(self, slider_default_datetime: datetime):
@@ -39,7 +39,6 @@ class Apresentator():
 
         slider_value_datetime = self.filter.filter_slider_datetime(name='Filtering Monthly', default_value=slider_default_datetime)
         df_plot = self.filter.filter_df_datetime(slider_value_datetime)
-
         self.ploter.monthly_stability(df=df_plot)
 
     def histogram(self, slider_default_datetime: datetime):
@@ -47,7 +46,6 @@ class Apresentator():
 
         slider_value_datetime = self.filter.filter_slider_datetime(name='Filtering Distribution', default_value=slider_default_datetime)
         df_plot = self.filter.filter_df_datetime(slider_value_datetime)
-
         self.ploter.distribution(df=df_plot)
 
     def month_boxplot(self, slider_default_datetime: datetime):
@@ -55,5 +53,4 @@ class Apresentator():
 
         slider_value_datetime = self.filter.filter_slider_datetime(name='Filtering Month', default_value=slider_default_datetime)
         df_plot = self.filter.filter_df_datetime(slider_value_datetime)
-
         self.ploter.month_outlier_detector(df=df_plot)

@@ -39,7 +39,7 @@ class Questioner():
     def forecasting_quantity_days(self):
         '''Number of days to be forecasting from the model'''
 
-        forecast_days = st.number_input('Forecasting Days', 1)
+        forecast_days = st.number_input('Forecasting Days', 2)
 
         return forecast_days - 1
 

@@ -4,7 +4,7 @@ WORKDIR /app
 
 ARG request_domain
 
-ENV request_domain=$TOKEN_FIGMA_CRYPTO_KEY
+ENV request_domain=$FIGMA_CRYPTO_API_URL
 
 COPY requirements.txt ./requirements.txt
 
@@ -12,10 +12,10 @@ RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 8501
 
 COPY . /app
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["streamlit", "run"]
 
 CMD ["main.py"]

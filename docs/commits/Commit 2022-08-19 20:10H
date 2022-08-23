@@ -1,10 +1,12 @@
-Advancing in use_cases structure and created main.py.
+Updates on use cases, connectors and external factors layers, excluded one class from entities layer.
 
 Warning:
-    - main.py: created for testing the application but can't be used right now.
+    - Just entities layer's complete, the others need to be completed.
 
 Additioned:
-    - New files at "domain/use_cases".
+    - domain/use_cases/questioner.py: created to get data for do the requests in the API.
+    - domain/connectors/apresentator.py: created to connect plots and filters for the framework.
+    - domain/connectors/datagetter.py: created to do the requests on the API and get the data.
 
 Revised:
-    - The architecture of this project was revised.
+    - domain/entities: excluded one of the classes because it was useless.

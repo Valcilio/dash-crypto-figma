@@ -7,7 +7,7 @@ from domain.entities.plotdata import PlotData
 class Ploter():
 
     def daily_stability(self, df: pd.DataFrame, **kwargs):
-        '''Line pot with daily values'''
+        '''Line plot with daily values'''
 
         cols_list = self._get_cols_list(df=df)
         fig = px.line(

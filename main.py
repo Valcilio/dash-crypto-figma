@@ -4,20 +4,34 @@ import streamlit as st
 from domain.connectors.apresentator import Apresentator
 from domain.connectors.datagetter import DataGetter
 
-class StreamlitApp():
+datagetter = DataGetter()
 
-    def __init__(self):
+def run_questions():
 
-        self.datagetter = DataGetter()
+    datagetter.run_all_questions()
 
-    def streamlit_app(self):
-        '''Run Streamlit APP'''
+@st.cache(suppress_st_warning=True)
+def request_data():
 
-        self.datagetter.run_all_questions()
+    if st.button('Update Data'):
+        df = datagetter.request_data()
+    
+    return df
 
-        if st.button('Show Dashboard'):
-            df = self.datagetter.request_data()
-            Apresentator(df=df).plot_all()
+def plots(df):
+
+    if df is None:
+        pass
+    else:
+        st.subheader("Cryptocurrency's Dashboard")
+        Apresentator(df).plot_all()
 
 if __name__ == '__main__':
-    StreamlitApp().streamlit_app()
+    run_questions()
+
+    try:
+        df = request_data()
+    except:
+        df = None
+
+    plots(df)
