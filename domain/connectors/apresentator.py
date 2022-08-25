@@ -16,11 +16,17 @@ class Apresentator():
     def plot_all(self):
         '''Run all methods of this aplication'''
 
+        self.subheader()
         slider_default_datetime = self.default_filter()
         self.daily_lineplot(slider_default_datetime)
         self.monthly_lineplot(slider_default_datetime)
         self.histogram(slider_default_datetime)
         self.month_boxplot(slider_default_datetime)
+
+    def subheader(self):
+        '''Subheader indicating the start point of the dashboard'''
+
+        return st.subheader("Cryptocurrency's Dashboard")
 
     def default_filter(self): 
         '''Create a default filter'''

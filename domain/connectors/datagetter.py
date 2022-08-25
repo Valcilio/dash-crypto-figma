@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import json
 import requests
+import streamlit as st
 
 from domain.use_cases.questioner import Questioner
 
@@ -22,10 +23,21 @@ class DataGetter():
     def run_all_questions(self):
         '''Run all question to get the data for predict'''
 
+        self.questioner.subheader()
         self.market_curr = self.questioner.market_curr()
         self.crypto_curr = self.questioner.crypto_curr()
         self.info_analy = self.questioner.info_extract()
         self.forecast_days = self.questioner.forecasting_quantity_days()
+
+    def download_button(self, df: pd.DataFrame):
+        '''Plot download button to '''
+
+        st.download_button(
+            label="Download Data as CSV",
+            data=self._convert_df(df),
+            file_name='cryptocurrency.csv',
+            mime='text/csv',
+        )
 
     def _framework_data(self):
         '''Dict with framework data informations'''
@@ -54,3 +66,9 @@ class DataGetter():
         '''Return the header to make requests in the API'''
 
         return {'Content-type': 'application/json' }
+
+    @st.cache
+    def _convert_df(self, df: pd.DataFrame):
+        '''Save dataframe as csv'''
+
+        return df.to_csv()

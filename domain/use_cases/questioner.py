@@ -2,6 +2,11 @@ import streamlit as st
 
 class Questioner():
 
+    def subheader(self):
+        '''Subheader indicating the start of the questions'''
+
+        return st.subheader('Especifications to Request Data')
+
     def create_dashboard(self):
         '''Button to start dashboard's creation'''
 

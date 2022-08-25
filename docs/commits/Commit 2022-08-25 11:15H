@@ -1,0 +1,11 @@
+Application V1 finished.
+
+Warning:
+    - No warnings.
+
+Additioned:
+    - domain/connectors/datagetter.py: additioned new methods to create download button.
+    - main.py: finished with functions to plot the framework.
+
+Revised:
+    - No revisions.
