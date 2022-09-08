@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
   RUN_REGION: us-central1
-  SERVICE_NAME: figma-crypto-api
+  SERVICE_NAME: figma-crypto-dash
   TOKEN_FIGMA_CRYPTO_KEY: ${{ secrets.TOKEN_FIGMA_CRYPTO_KEY }}
 
 jobs:
