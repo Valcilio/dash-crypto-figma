@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import streamlit as st
 
@@ -36,6 +37,7 @@ def download_button(df: pd.DataFrame):
     return DataGetter().download_button(df)
 
 if __name__ == '__main__':
+    st.write(os.environ.get('FIGMA_CRYPTO_API_URL'))
     header()
     run_questions()
 
